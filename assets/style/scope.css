@@ -1,0 +1,24 @@
+@media screen and (max-width: 576px) {
+  .summary {
+    margin: 15px 0;
+    width: 90%;
+  }
+}
+@media screen and (min-width: 577px) {
+  .summary {
+    margin: 15px 0;
+    width: 100%;
+  }
+  .deliveryService {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .summary {
+    margin: 15px 0;
+    width: 35%;
+  }
+  .deliveryService {
+    width: 45%;
+  }
+}/*# sourceMappingURL=scope.css.map */

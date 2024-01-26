@@ -1,0 +1,428 @@
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #eef1f7;
+
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'montserrat';
+
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'vazie';
+    src: url('../fonts/vazir.eot');
+    src: url('../fonts/vazir.ttf') format('truetype'),
+        url('../fonts/vazir.woff2') format('woff2'),
+        url('../fonts/vazir.woff') format('woff');
+}
+
+.main {
+
+    width: 100%;
+   
+    @extend .flex;
+
+}
+
+.costCalculator {
+    @extend .flex;
+    width: 90%;
+    height: 90%; 
+    flex-wrap: wrap;
+}
+
+.explain {
+    width: 100%;
+    @extend .flex;
+    flex-wrap: wrap;
+    margin: 45px 0;
+    >h2 {
+        width: 100%;
+        text-align: center;
+        text-transform: capitalize;
+        color: rgb(58, 58, 58);
+        font-weight: 600;
+        margin-top: 15px;
+    }
+}
+
+.deliveryService {
+    min-width: 320px;
+    width: 45%;
+    // height: 550px;
+    background-color: white;
+    @extend .flex;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 0 30px;
+    border-radius: 5px;
+    padding: 20px 0;
+    // border: 1px solid red;
+
+    >h4 {
+        width: 80%;
+        margin: 10px;
+        // border: 1px solid red;
+    }
+
+}
+
+.mainOfDelivery {
+    width: 80%;
+    // border: 1px solid purple;
+}
+
+
+.active {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.438);
+    background-color: white;
+    border-radius: 4px;
+
+    >svg {
+        color: green;
+    }
+
+}
+
+.hwd {
+    @extend .flex;
+    justify-content: start;
+    flex-wrap: wrap;
+
+    >span {
+        font-size: 0.6rem;
+        color: black;
+        margin: 10px;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+
+    >span:nth-of-type(1) {
+        position: relative;
+
+        &::before {
+            content: '*';
+            width: 10px;
+            height: 10px;
+            color: red;
+            position: absolute;
+            top: 0;
+            right: -12px;
+        }
+    }
+
+    >input {
+        width: 90%;
+        height: 30px;
+        padding-left: 15px;
+        margin: 0 10px;
+        outline: none;
+        border: 1px solid #bbbbbbbd;
+        border-radius: 5px;
+        position: relative;
+
+        &:focus {
+            border: 1px solid green;
+        }
+    }
+
+    >span:nth-of-type(2) {
+        font-size: 0.5rem;
+        color: #696969bd;
+    }
+
+}
+
+.distance {
+    width: 100%;
+    // border: 1px solid red;
+    margin: 40px 0;
+    @extend .flex;
+    flex-wrap: wrap;
+
+    >input {
+        width: 100%;
+        cursor: grab;
+    }
+
+    >span {
+        display: block;
+        width: 50%;
+        // border: 1px solid red;
+        font-size: 0.7rem;
+        font-weight: bold;
+    }
+
+    >span:nth-of-type(2),
+    >span:nth-of-type(4) {
+        text-align: right;
+
+    }
+
+    >span:nth-of-type(3),
+    >span:nth-of-type(4) {
+        font-weight: normal;
+    }
+}
+
+
+
+.type-of {
+    width: 100%;
+    margin-top: 30px;
+
+    // border: 1px solid red;
+    >h4 {
+
+        margin: 10px;
+        // border: 1px solid green;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    >ul {
+        width: 100%;
+        list-style-type: none;
+        position: relative;
+
+        // border: 1px solid purple;
+        >li {
+            width: 90%;
+            height: 35px;
+            @extend .flex;
+            justify-content: start;
+            border: 1px solid #bbbbbbbd;
+            font-size: 0.75rem;
+            padding: 0 10px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            >img {
+                width: 25px;
+                height: 25px;
+                margin-right: 10px;
+            }
+
+            >span {
+                color: #bbbbbbbd;
+                position: absolute;
+                right: 10%;
+            }
+        }
+
+    }
+
+    >span {
+        width: 100%;
+        padding-left: 10px;
+        font-size: 0.7rem;
+    }
+}
+
+.type-of-package,
+.type-of-service {
+    @extend .flex;
+    flex-wrap: wrap;
+    width: 90%;
+    position: absolute;
+    top: 34px;
+    left: 2.3%;
+    background-color: white;
+    z-index: 500;
+    
+
+    >ul {
+        width: 100%;
+        height: 0;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        list-style-type: none;
+        transition: .5s;
+
+        >li {
+            width: 100%;
+            @extend .flex;
+            justify-content: start;
+            flex-wrap: wrap;
+            padding: 8px;
+            border: 1px solid #bbbbbb46;
+            cursor: pointer;
+            font-size: 0.7rem;
+
+            &:hover {
+                background-color: #d6d6d6bd;
+            }
+
+            >img {
+                width: 25px;
+                height: 25px;
+                margin: 5px;
+            }
+        }
+    }
+}
+
+.activeLi {
+    height: 170px !important;
+}
+
+// end  of deliver ......................................................saeed kahe
+
+
+.summary {
+    min-width: 320px;
+    width: 350px;
+    margin-top: 15px;
+    border-radius: 5px;
+    @extend .flex;
+    >.mainOfSummary {
+        width: 90%;
+        height: 100%;
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+
+        >h4 {
+            margin: 5px 0;
+        }
+
+        >div {
+
+            width: 100%;
+            list-style-type: none;
+            margin: 10px 0;
+
+            >ul {
+                list-style-type: none;
+
+                li {
+                    width: 100%;
+                    padding: 10px 0;
+                    border-bottom: 1px dashed rgba(128, 128, 128, 0.308);
+                    font-size: 0.8rem;
+                    text-transform: capitalize;
+                    @extend .flex;
+
+                    span {
+                        width: 50%;
+                        @extend .flex;
+                        flex-wrap: wrap;
+                        font-size: 0.65rem;
+                        font-weight: 600;
+                        justify-content: start;
+                        
+                    }
+
+                    span:nth-of-type(2) {
+                        justify-content: end;
+                    }
+                }
+
+                >li:nth-of-type(1) {
+                    border: none;
+
+                    span {
+                        background-color: #bbbbbbbd;
+                        font-weight: bold;
+                        color: #141414d5;
+                        font-size: 0.7rem;
+                        padding: 3px;
+                    }
+                }
+
+                >li:last-child {
+                    border-bottom: 1px solid #bbbbbbbd;
+                    >span{
+                        font-weight: bold;
+                        font-size: 0.7rem;
+                    }
+                }
+                >li:nth-of-type(3){
+                 >textarea{
+                    width: 50% !important;
+                    min-height: 40px !important;
+                    max-height: 100px !important;
+                    outline: none;
+                    border: none;
+                    overflow-y: hidden;
+                    background-color: transparent;
+                 }
+                }
+
+            }
+        }
+
+    }
+
+}
+
+
+.paymentMethods{
+    width: 100%;
+    @extend .flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    >h4{
+        margin: 5px;
+        font-size: 0.9rem;
+    }
+    >form{
+        width: 100%;
+        padding: 15px;
+        @extend .flex;
+        justify-content: start;
+        flex-wrap: wrap;
+        >label{
+           display: block;
+           width: 30%;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: capitalize;
+            cursor: pointer;
+            color: #666666;
+            
+        }
+        >input{ 
+            cursor: pointer;
+            margin:0 3px 0 10px;
+        }
+    
+        >button{
+            width: 100%;
+            height: 30px;
+            @extend .flex;
+            margin-top: 40px ;
+            
+            outline: none;
+            background-color: #4bc891;
+            color: white;
+            text-transform: uppercase;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            border: none;
+            cursor: pointer;
+            transition: .4s;
+            &:hover{
+                background-color: #3ea377;
+            }
+        }
+    }
+}
